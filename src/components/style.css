@@ -1,0 +1,308 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    user-select: none;
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(../../public/fonts/CARDS.TTF);
+}
+
+@font-face {
+    font-family: chip;
+    src: url(../../public/fonts/ChangelingDingbats-KVXZ.ttf);
+}
+
+header {
+    background-color: black;
+    position: absolute;
+    height: 5vh;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header .settings {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+}
+
+header .settings__menu {
+    height: 80vh;
+    width: 15vh;
+    /* background-color: grey; */
+    display: none;
+    top: 5vh
+}
+
+header .settings__menu.active {
+    position: absolute;
+    display: block;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0px 7px 7px 0;
+    /* display: inline-block; */
+    display: none;
+    padding: 11px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    position: absolute;
+    top: -225px;
+    transition: all 1s ease-in-out;
+}
+
+main {
+    background-image: radial-gradient(green -20%, rgb(9, 68, 9));
+    height: 100vh;
+}
+
+.main-img {
+    /* top: 142px; */
+    /* position: absolute; */
+    width: 60%;
+    /* margin-top: 23vh; */
+    /* left: 110px; */
+}
+
+#board {
+    position: relative;
+    display: flex;
+    /* width: auto; */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.chip-img-bet{
+    width: 30px;
+}
+
+.chip-drop-zone{
+    position: absolute;
+}
+
+#player-sec {
+    display: flex;
+    /* flex-basis: 80vw; */
+    width: 80%;
+    margin-top: 15vh;
+    justify-content: space-between;
+}
+
+.player {
+    /* height: 10vh;
+    width: 6vw; */
+    height: 120px;
+    width: 80px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    border: 3px solid #fee003;
+    flex-direction: column;
+    position: relative;
+}
+
+.player .player-hand {
+    font-family: myFirstFont;
+    font-size: 86px;
+}
+
+.player-hand {
+    position: relative;
+    top: -23vh;
+}
+
+.player-chips {
+    margin-top: 7px;
+    background-color: gray;
+    padding: 4px 12px 4px 12px;
+    border-radius: 33px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.hand-span {
+    position: absolute;
+    top: 4px;
+    left: 17px;
+    transform: rotate(6deg);
+    z-index: 200;
+    /* background: green; */
+}
+
+.bet-sec {
+    /* display: none; */
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: -9vh;
+    align-items: center;
+}
+
+.lock-bet {
+    position: absolute;
+    /* width: auto; */
+    /* width: 60px; */
+    /* display: none; */
+    /* margin-top: 7px; */
+    /* position: relative; */
+    bottom: -3vh;
+}
+
+.join-btn {
+    position: absolute;
+    margin-top: 50%;
+    background: rgb(40 37 37 / 10%);
+    font-size: 30px;
+    height: 34px;
+    width: 34px;
+    border-radius: 13px;
+}
+
+.join-btn:hover {
+    background: rgb(40 37 37 / 40%);
+}
+
+.house-sec {
+    font-family: myFirstFont;
+    font-size: 86px;
+    height: 121px;
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-score {
+    display: none;
+    position: absolute;
+    top: -34px;
+    background-color: gray;
+    /* padding: 6px; */
+    padding: 4px 10px 4px 10px;
+    border-radius: 28px;
+    /* left: 11px; */
+}
+
+.house-score {
+    display: none;
+    font-family: auto;
+    position: absolute;
+    top: 13vh;
+    background-color: gray;
+    /* padding: 6px; */
+    padding: 4px 10px 4px 10px;
+    border-radius: 28px;
+    /* left: 11px; */
+    font-size: 24px;
+    /* bottom: 98px; */
+}
+
+.button-sec {
+    width: 80%;
+    position: fixed;
+    bottom: 25px;
+}
+
+.button-sec div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.chip-box {
+    display: flex;
+    /* position: absolute;
+    top: 113px; */
+}
+
+.chip {
+    width: 40px;
+}
+
+/* .chip-1{
+    background-image: url(./chips/5-chip.png);
+}
+.chip-2{
+    background-image: url(./chips/10-chip.png);
+}
+.chip-3{
+    background-image: url(./chips/50-chip.png);
+}
+.chip-4{
+    background-image: url(./chips/100-chip.png);
+}
+.chip-5{
+    background-image: url(./chips/500-chip.png);
+} */
+
+.button-sec div button {
+    padding: 12px;
+    border-radius: 40px;
+    font-size: 22px;
+    width: 166px;
+}
+
+#double {
+    display: none;
+    background-color: rgba(18, 107, 146, 0.7);
+    border: 3px solid rgba(18, 107, 146, 1);
+}
+
+#double:hover {
+    background-color: rgba(18, 107, 146, 1);
+}
+
+#surrender {
+    display: none;
+    background-color: rgba(244, 120, 10, 0.7);
+    border: 3px solid rgba(244, 120, 10, 1);
+}
+
+#surrender:hover {
+    background-color: rgba(244, 120, 10, 1);
+}
+
+#hit {
+    display: none;
+    background-color: rgba(37, 151, 55, 0.7);
+    border: 3px solid rgba(37, 151, 55, 1);
+}
+
+#hit:hover {
+    background-color: rgba(37, 151, 55, 1);
+}
+
+#split {
+    display: none;
+    background-color: rgba(162, 42, 135, 0.7);
+    border: 3px solid rgba(162, 42, 135, 1);
+}
+
+#split:hover {
+    background-color: rgba(162, 42, 135, 1);
+}
+
+#stand {
+    display: none;
+    background-color: rgba(187, 32, 45, 0.7);
+    border: 3px solid rgba(187, 32, 45, 1);
+}
+
+#stand:hover {
+    background-color: rgba(187, 32, 45, 1);
+}
+
+/* <span style="
+    position: absolute;
+    top: 4px;
+    left: 17px;
+    transform: rotate(6deg);
+    z-index: 200;
+    /* background: green; */
+/* ">b</span> */
