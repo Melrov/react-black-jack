@@ -1,9 +1,41 @@
-import React from 'react'
+import React from "react";
 
-function HouseDisplay() {
+function HouseDisplay(props) {
+  let { house } = props;
   return (
-    <div>HouseDisplay</div>
-  )
+    <div className="house-sec" id="house-sec">
+      <div id="house-cards">
+        {house.cardPile.map(
+          (card, idx) =>
+            (!(idx === 1) || house.showAll) && <span>{card.cardText}</span>
+        )}
+      </div>
+      {house.cardTotal !== 0 && (
+        <span
+          style={{
+            backgroundColor:
+              house.win === true
+                ? "green"
+                : house.pushW === true
+                ? "blue"
+                : house.win === false || house.bust === true
+                ? "red"
+                : "",
+          }}
+          className="house-score"
+          id="house-score"
+        >
+          {house.showTotal
+            ? house.cardTotal +
+              " " +
+              (house.aceTotal <= 21 && house.aceTotal !== house.cardTotal
+                ? "/ " + house.aceTotal
+                : "")
+            : house.cardPile[0].name === 'Ace' ? '1 / 11': house.cardPile[0].value}
+        </span>
+      )}
+    </div>
+  );
 }
 
-export default HouseDisplay
+export default HouseDisplay;

@@ -47,7 +47,7 @@ header .settings__menu.active {
     border: solid black;
     border-width: 0px 7px 7px 0;
     /* display: inline-block; */
-    display: none;
+    /* display: none; */
     padding: 11px;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
@@ -56,7 +56,7 @@ header .settings__menu.active {
     transition: all 1s ease-in-out;
 }
 
-main {
+#board {
     background-image: radial-gradient(green -20%, rgb(9, 68, 9));
     height: 100vh;
 }
@@ -179,7 +179,7 @@ main {
 }
 
 .player-score {
-    display: none;
+    /* display: none; */
     position: absolute;
     top: -34px;
     background-color: gray;
@@ -190,7 +190,7 @@ main {
 }
 
 .house-score {
-    display: none;
+    /* display: none; */
     font-family: auto;
     position: absolute;
     top: 13vh;
@@ -249,7 +249,7 @@ main {
 }
 
 #double {
-    display: none;
+    /* display: none; */
     background-color: rgba(18, 107, 146, 0.7);
     border: 3px solid rgba(18, 107, 146, 1);
 }
@@ -259,7 +259,7 @@ main {
 }
 
 #surrender {
-    display: none;
+    /* display: none; */
     background-color: rgba(244, 120, 10, 0.7);
     border: 3px solid rgba(244, 120, 10, 1);
 }
@@ -269,7 +269,7 @@ main {
 }
 
 #hit {
-    display: none;
+    /* display: none; */
     background-color: rgba(37, 151, 55, 0.7);
     border: 3px solid rgba(37, 151, 55, 1);
 }
@@ -279,7 +279,7 @@ main {
 }
 
 #split {
-    display: none;
+    /* display: none; */
     background-color: rgba(162, 42, 135, 0.7);
     border: 3px solid rgba(162, 42, 135, 1);
 }
@@ -289,7 +289,7 @@ main {
 }
 
 #stand {
-    display: none;
+    /* display: none; */
     background-color: rgba(187, 32, 45, 0.7);
     border: 3px solid rgba(187, 32, 45, 1);
 }

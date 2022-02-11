@@ -110,6 +110,4 @@ export default class Deck {
             this.discardPile.push(card)
         })
     }
-
-
 }

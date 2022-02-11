@@ -1,6 +1,7 @@
 import React from "react";
 
 function PlayerChips(props) {
+  
   function chipClick(e) {
     props.setBet(parseInt(e.target.id));
   }
