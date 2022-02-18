@@ -50,7 +50,6 @@ class Card {
 export default class Deck {
     constructor(decks = 1, cardStopper = false) {
         this.decks = decks > 0 ? decks : 1;
-        this.activePile = [];
         this.discardPile = [];
         this.cardPile = [];
         this.cardStopper = cardStopper && this.decks > 2 ? cardStopper : false
@@ -73,7 +72,7 @@ export default class Deck {
             randomIndex;
 
         // While there remain elements to shuffle...
-        while (currentIndex != 0) {
+        while (currentIndex !== 0) {
 
             // Pick a remaining element...
             randomIndex = Math.floor(Math.random() * currentIndex);

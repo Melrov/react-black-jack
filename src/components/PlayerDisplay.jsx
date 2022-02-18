@@ -1,5 +1,33 @@
 import React, { useState } from "react";
 import PlayerChips from "./PlayerChips";
+import styled from "styled-components";
+
+const Arrow = styled.i`
+    border: solid black;
+    border-width: 0px 7px 7px 0;
+    padding: 11px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    position: absolute;
+    top: -225px;
+    transition: all 1s ease-in-out;
+`
+const Player = styled.div`
+    height: 120px;
+    width: 80px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    border: 3px solid #fee003;
+    flex-direction: column;
+    position: relative;
+    `
+  const Hand = styled.div`
+    font-family: myFirstFont;
+    font-size: 86px;
+    position: relative;
+    top: -23vh;
+  `
 
 function PlayerDisplay(props) {
   let { player, setPlayer, running } = props;
@@ -67,8 +95,8 @@ function PlayerDisplay(props) {
   //console.log("hello ");
   // id="[a-z0-9-]+"
   return (
-    <div className="player">
-      {props.active && <i className="arrow"></i>}
+    <Player /* className="player" */ >
+      {props.active && <Arrow  /* className="arrow" */ ></Arrow>}
       {!player.joined && !running && (
         <button className="join-btn" onClick={join}>
           +
@@ -76,7 +104,7 @@ function PlayerDisplay(props) {
       )}
       {player.split && <div id="p1-split-left"></div>}
       {!player.split && (
-        <div className="player-hand" id="p1-hand">
+        <Hand /* className="player-hand" id="p1-hand" */ >
           {player.cardPile.map((card, idx) => (
             <span
               key={props.idx + idx}
@@ -96,7 +124,7 @@ function PlayerDisplay(props) {
               {card.cardText}
             </span>
           ))}
-        </div>
+        </Hand>
       )}
       {player.cardPile.length >= 1 && (
         <span
@@ -107,10 +135,10 @@ function PlayerDisplay(props) {
               player.bust || player.win === false
                 ? "red"
                 : player.pushW === true
-                ? "blue"
-                : player.win === true
-                ? "green"
-                : "",
+                  ? "blue"
+                  : player.win === true
+                    ? "green"
+                    : "",
           }}
         >
           {player.cardTotal +
@@ -125,7 +153,7 @@ function PlayerDisplay(props) {
         <PlayerChips chips={player.chips} lockBet={lockBet} setBet={setBet} />
       )}
       <div className="chip-drop-zone">{betZone}</div>
-    </div>
+    </Player>
   );
 }
 
